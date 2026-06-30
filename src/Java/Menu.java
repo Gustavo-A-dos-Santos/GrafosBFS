@@ -76,35 +76,29 @@ public class Menu {
 
     }
 
-    private void carregarGrafoExemplo() {
+        private void carregarGrafoExemplo() {
+            // Reinicializa o grafo com espaço para 6 vértices
+            grafo = new Grafo(6);
 
-        grafo = new Grafo(6);
+            // Define os nomes dos vértices textualmente
+            grafo.adicionarVertice(0, "A");
+            grafo.adicionarVertice(1, "B");
+            grafo.adicionarVertice(2, "C");
+            grafo.adicionarVertice(3, "D");
+            grafo.adicionarVertice(4, "E");
+            grafo.adicionarVertice(5, "F");
 
-        grafo.adicionarVertice(0, "A");
-        grafo.adicionarVertice(1, "B");
-        grafo.adicionarVertice(2, "C");
-        grafo.adicionarVertice(3, "D");
-        grafo.adicionarVertice(4, "E");
-        grafo.adicionarVertice(5, "F");
+            // Adiciona as conexões (arestas) conforme o desenho do exemplo
+            grafo.adicionarAresta(0, 1); // A - B
+            grafo.adicionarAresta(0, 2); // A - C
+            grafo.adicionarAresta(0, 3); // A - D
+            grafo.adicionarAresta(1, 4); // B - E
+            grafo.adicionarAresta(4, 5); // E - F
+            grafo.adicionarAresta(3, 5); // D - F
 
-        /*
-                A
-             /  |  \
-            B   C   D
-            |       |
-            E-------F
-         */
-
-        grafo.adicionarAresta(0, 1);
-        grafo.adicionarAresta(0, 2);
-        grafo.adicionarAresta(0, 3);
-        grafo.adicionarAresta(1, 4);
-        grafo.adicionarAresta(4, 5);
-        grafo.adicionarAresta(3, 5);
-
-        System.out.println("\nGrafo de exemplo carregado com sucesso!");
-
-    }
+            System.out.println("\n Grafo de exemplo (A até F) carregado com sucesso!");
+            System.out.println("Dica: Vá na opção [2] para ver a matriz dele ou [7] para testar a BFS!");
+        }
 
     private void executarBFS() {
 
